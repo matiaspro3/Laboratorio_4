@@ -1,0 +1,27 @@
+Cliente -> Html, Css, Angular(js).
+
+Servidor -> Php, ApiRest(Slim Framework).. las funcionalidades php van a estar en el servidor para poder ser
+consumidas desde cualquier parto con js.
+
+Slim Framework: Los archivos php no los puedo acceder si no estoy en el servidor donde estan alojados.
+Api Rest: tiene la caracteristica de que lo puede consumir cualquir aplicacion/dispositivo.
+podemos utilizar mas metodos que solo el post (get, push, delete,etc)
+
+1)instalar node.JS(6.4 recomendable) para poder utiliar comandos "npm" que me da acceso a repositorios de código. 
+2)una vez instalado node(npm) ver como instalar Bower (Siempre que se instala algo se indica -g para que sea global)
+3)instalar composer?? que me baja y permite instalar la última version de slim.
+composer -> me trae los archivos a mi subDirectorio para que no tenga que referenciarlos y poder trabajar de forma desconectada.
+
+YEOMEN
+
+
+IR BUSCANDO LOS TEMPLATES
+Crear un html con un diseño propio (el login puede ser una pantalla distinta a la principal, lo mismo administración, etc.)Bajar los Templates de administracion, login, recuperar pass, abm, mostrar fotos(binvenidos inicio quienes somos, etc)
+Los datos inicialmente pueden estar hardcodeados para después tomarlos de la base de datos.
+Buscar Templates con Angular y bootstrap.
+
+administrar htacces file en el hosting para configurar la base de datos.
+
+Ver doc oficial de slim para instalar. (w3school) Angular2->NO!
+
+

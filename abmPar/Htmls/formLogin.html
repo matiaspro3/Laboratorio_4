@@ -30,7 +30,12 @@
 
 
 
-
+<!-- angular-->
+<!-- 1)incluimos angular en el projecto con la siguiente libreria que ya la tenemos localmente -->
+	<script SRC="..//bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+<!-- 2) referencia al .js que contiene los controles de angular -->
+ 	<script SRC="..//js/app.js" TYPE="text/javascript"></script>
+	
 
 
 
@@ -42,6 +47,12 @@
 	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}} Angular  &nbsp;&nbsp;&nbsp;</span>
  			-->
       
+      <center><a id="barraLogin" href="..//index.html"   class="btn" >Volver</a></center>
+      
+
+
+
+
 <div  class="form-ingreso " >
 
 	<div  class="container">
@@ -56,9 +67,14 @@
 			<form id="FormIngreso"  name="FormIngreso" enctype="multipart/form-data" >
 
 				<input type="checkbox" ng-model="ver" />
+
 				<span>{{ver}}</span>
+
+
 				<input type="text" name="apellido" ng-if="ver" ng-model="mascota.nombre" placeholder="ingrese apellido" value="" required/>
 				<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
+				
+
 				</span>
 				<input type="text" name="nombre" ng-show="ver" ng-model="persona.nombre" placeholder="ingrese nombre" value="" /> 
 
@@ -66,8 +82,10 @@
 
 				<span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
 				<input type="email" name="correo" ng-model="persona.correo" placeholder="ingrese correo" value="" required/>
+
+
 				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
-				<p style='color: black;'>*El DNI no se puede modificar.</p> ": "" ; ?>
+				<p style='color: red;'>*El DNI no se puede modificar.</p>
 				
 
 

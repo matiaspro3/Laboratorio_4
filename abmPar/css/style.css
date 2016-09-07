@@ -134,6 +134,20 @@ MAIN NAVIGATION
 	position: relative;
 	left: 300px;  /*aca*/
 }
+#barraLogin  {  /* frm login volver*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+/*	float: center;*/
+	color:red;
+	font-weight: bold;
+	/* background:#638cb5;*/
+	font-size: 25px;
+	left: 300px;  /*aca*/
+}
+
+
+
 #main-nav li:first-child {
 	margin-left: 10px;
 }

@@ -1,4 +1,4 @@
-var app = angular.module('ModuloAngular', []);
+var app = angular.module('ModuloAngular', [])
 
 app.controller('controlLogin', function($scope, $http) {
   $scope.usuario={};

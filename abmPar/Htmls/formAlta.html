@@ -24,12 +24,18 @@
 
 <body ng-app="ModuloAngular" ng-controller="controlAlta">
       <center>
+
+ <h1 style='color: blue'> Bienvenido {{usuario.nombre}}</h1>
+    <div class="contenedor">
+     
+
+
 <div class="container">
 
       <form class="form-ingreso"  name="myForm" enctype="multipart/form-data">
 
         <label id="titulo">Registro</label><br>
-        <input type="text" class="form-control" id="nombre" name="nombre" ng-model="usuario.nombre" placeholder="Ingrese su nombre" required="true"><br>
+        <input type="text" class="form-control" id="nombre" name="nombre" ng-model="usuario.nombre" placeholder="Ingrese su nombre" required><br>
         <input type="text" class="form-control" id="apellido" name="apellido" ng-model="usuario.apellido" placeholder="Ingrese su apellido" required="true"><br>
         <input type="number" class="form-control"id="edad" name="edad" ng-model="usuario.edad" min="18" max="99" placeholder="Ingrese su edad" required="true"><br>
         Sexo: 
@@ -52,7 +58,7 @@
         <input type="password" class="form-control" id="password2" ng-model="usuario.password2" placeholder="Repita su clave" value=""><br>
 
 
-        Especialidad: 
+        Especialidad:  
         <br></br>
         <input type="checkbox" ng-model="usuario.lenguajeCobol" name="c" value="cobol" unchecked> Cobol
         <br></br>

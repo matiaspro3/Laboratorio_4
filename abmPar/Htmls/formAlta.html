@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Form Alta</title>
+ <link href="..//css/bootstrap.min.css" rel="stylesheet">
+<link href="..//css/ingreso.css" rel="stylesheet">
+
+
+<!-- main css -->
+<link href="..//css/style.css" rel="stylesheet" type="text/css">
+
+<!-- media queries css -->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="css/media-queries.css" rel="stylesheet" type="text/css">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<link href="..//css/ingreso.css" rel="stylesheet">
+
+<!-- 1)incluimos angular en el projecto con la siguiente libreria que ya la tenemos localmente -->
+  <script SRC="..//bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+<!-- 2) referencia al .js que contiene los controles de angular -->
+  <script SRC="..//js/app.js" TYPE="text/javascript"></script>
+
+</head>
+
+
+<body ng-app="ModuloAngular" ng-controller="controlAlta">
+      <center>
+<div class="container">
+
+      <form class="form-ingreso"  name="myForm" enctype="multipart/form-data">
+
+        <label id="titulo">Registro</label><br>
+        <input type="text" class="form-control" id="nombre" name="nombre" ng-model="usuario.nombre" placeholder="Ingrese su nombre" required="true"><br>
+        <input type="text" class="form-control" id="apellido" name="apellido" ng-model="usuario.apellido" placeholder="Ingrese su apellido" required="true"><br>
+        <input type="number" class="form-control"id="edad" name="edad" ng-model="usuario.edad" min="18" max="99" placeholder="Ingrese su edad" required="true"><br>
+        Sexo: 
+        <input type="radio"  name="sexo" id="m" ng-model="usuario.sexo" value="m"> M
+        <input type="radio" name="sexo" id="f" ng-model="usuario.sexo" value="f"> F<br>
+        <input type="number" class="form-control" id="dni" name="dni" ng-model="usuario.dni" placeholder="Ingrese su dni" required="true"><br>
+        <input type="email" class="form-control" id="email" name="email" ng-model="usuario.email" placeholder="Ingrese su email" required="true"><br>
+
+
+        <select class="form-control" ng-model="usuario.estado">
+          <option></option>
+          <option value="estado1">Soltero</option>
+          <option value="estado2">Casado</option>
+          <option value="estado2">Virgen</option>
+        </select><br> 
+        <input type="date" class="form-control" id="fechaNac" name="fechaNac" ng-model="usuario.fechaNac" placeholder="Fecha Nac. yyyy-mm-dd" onkeyup="
+  var date = this.value;
+  if (date.match(/^\d{4}$/) !== null) {
+     this.value = date + '-';
+  } else if (date.match(/^\d{4}\-\d{2}$/) !== null) {
+     this.value = date + '-';
+  }" maxlength="10"><br>
+
+
+        <input type="password" class="form-control" id="password" ng-model="usuario.password" placeholder="Ingrese su clave" value=""><br>
+        <input type="password" class="form-control" id="password2" ng-model="usuario.password2" placeholder="Repita su clave" value=""><br>
+
+
+        Especialidad: 
+       
+        <input type="checkbox" ng-model="usuario.lenguajeCobol" name="c" value="cobol" unchecked> Cobol
+        <input type="checkbox" ng-model="usuario.lenguajePascal" name="pascal" value="python"> Pascal<br><br>
+        <input type="checkbox" ng-model="usuario.lenguajeJava" name="java" value="java"> Java
+
+
+        <button  class="btn btn-lg btn-success btn-block" name="login" id="login" ng-disabled="myForm.$invalid || usuario.password!=usuario.password2" ng-click="Registrarse()"><span>Registrarse </span></button>
+
+
+      </form>
+ </div>
+</center>
+
+</body>
+</html>

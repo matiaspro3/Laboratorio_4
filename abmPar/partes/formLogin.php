@@ -28,7 +28,7 @@
 
                    <label for="clave" class="sr-only">Nombre</label>
         
-        <input type="nombre" id="otro" minlength="3" class="form-control" placeholder="Nombre" required="" ">
+        <input type="nombre" id="otro" minlength="3" class="form-control" placeholder="Nombre" required=" ">
 
 
         <label for="clave" class="sr-only">Clave</label>

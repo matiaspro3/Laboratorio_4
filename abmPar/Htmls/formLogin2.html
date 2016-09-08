@@ -19,14 +19,14 @@
 <!-- 1)incluimos angular en el projecto con la siguiente libreria que ya la tenemos localmente -->
   <script SRC="..//bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
 <!-- 2) referencia al .js que contiene los controles de angular -->
-  <script SRC="..//js/app.js" TYPE="text/javascript"></script>
+  <script SRC="..//js/appAngular.js" TYPE="text/javascript"></script>
 
 
 
 
 </head>
  
- <body>     
+ <body ng-app="ModuloAngular" ng-controller="controlLogin">     
  <center>
 <div id="pagewrap" >
   <div id="content" >
@@ -74,7 +74,7 @@
 
 
     </div> <!-- /container -->
-<center><a id="barraLogin" href="..//index.html"   class="btn" >Cancelar</a></center>
+<center><a id="barraLogin" href="..//index.html"   class="btn btn-danger" >Cancelar</a></center>
 </center>
 </div>
 </div>

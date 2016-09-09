@@ -1,5 +1,11 @@
+/*
 
-
+input.ng-invalid {
+    background-color:indianred;
+}
+input.ng-valid {
+    background-color: palegreen;
+}*/
 * {
   margin:0;
   padding:0;
@@ -96,7 +102,7 @@ left:0px;
   -webkit-transition:opacity 1s;
 }
 
-#FormIngreso {
+#FormIngreso2 {
   
   background:#f0f0f0;
   padding:6% 4%;

@@ -1,0 +1,29 @@
+-directiva "ui-view" (en el index) me permite cargar paginas adentro.
+-Los ontroladores que defino en "index" van a ser padres del resto de los controladores.
+-Mis vistas abstractas tienen que tennes un "ui-view" (pueden tener mas de una con distinroto nombre).
+-ruteo: Para el usuario parece que estubiera navegando pero es un unico index.html
+-La idea es ir metiendo los templates html en los distintos subdirectorios dentro de mi proyecto asociados a las funciones que tienen.
+-mi pagina de inicio puede tener un menu y un footer "fijos" y en el medio le meto un div con "ui-view" y ahi se va actualizando con las distintas vistas utilizando herencia y rooteo.
+--Con el ruteo puedo verificar tambien si esta logueado.
+puedo referenciar desde el html a otro lado con la directiva de angular:
+<a ui-sref="persona.menu()">
+otra manera es con el state.go!
+(si solo quiero navegar sin pasar parametros puedo hacerlo con ui-ref si quiero usar parametros uso el .go)
+
+-github-- traer la pagina de "administrador", lo incluimos en el sitio de juegos e instalamos bower para traer las referencias.
+
+-El index.html va a estar siempre vacio a menos que querramos que algo aparezca en todo el resto del sistema (funciona como si fuera una abstracta).
+
+TP: El index vamos a tener que incorporar un nuevo bootstrap template 
+vamos a tener 3 vistas abstractas (una ya la tenemos "persona" a la que le tenemos que agregar las funcionalidades de ABM .. al igual que con ajax pero con $http).
+La otra vista va a tener "login y registro" que se puede dividir en 2 html (login = dos input text y un boton -- el registro 3= mail pass, pass2 y registrar).
+los botones logear y registrar tienen que disparar un obj json al los controladores.
+el control login va a consultar a la basi si esxiste y el registrar va a guardar el usuario.
+Puedo opcionalmente tener el mismo template para login y registro cada uno con su controiller o un solo controler para los 2 templates.
+
+La tercer vista va a ser una "abstracta de juegos"- hasy que agarrar los juegos en angular,incluir los html en el sitio y apuntarlas con el rooteo.
+La vista juegos va a tener un menu al igual que persona y va a redirigir a los distintos juegos.
+los estilos de c/vista tienen que ser DISTINTOS
+
+La idea principal de todo es tener la logica armada y despues solo cambiando los templates y los ccs me tiene que funcionar.
+

@@ -101,6 +101,21 @@ appAngular.config(function($stateProvider, $urlRouterProvider) {
         }
         )
 
+ .state(
+        "menujuegos.PiedarPapelTijera3",{
+            url:"/PiedarPapelTijera3",
+            views:{
+                "contenido":{
+                    templateUrl:"juegos/PiedarPapelTijera3.html",
+                    controller:"controljuego1"
+                }
+            }
+        }
+        )
+
+
+
+
 
 
 
@@ -161,6 +176,8 @@ $scope.irJuegos=function(){
 
 
 
+
+
 });
 
 
@@ -184,6 +201,13 @@ appAngular.controller("controljuegos", function($scope, $state){
     $state.go("menujuegos.AdivinaElNumero3");
 
 };
+
+
+
+    $scope.irPPT=function(){
+
+    $state.go("menujuegos.PiedarPapelTijera3");
+}
 
 
 

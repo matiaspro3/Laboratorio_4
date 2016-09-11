@@ -1,0 +1,51 @@
+
+
+
+</head>
+ 
+ <body ng-app="ModuloAngular" ng-controller="controlLogin">     
+ <center>
+<div id="pagewrap" >
+  <div id="content" >
+
+         
+    <div id="formLogin" class="container" >
+           
+      <form  class="form-ingreso " >
+        <h2  style='color: blue' class="form-ingreso-heading">Ingrese sus datos</h2>
+
+        
+       
+<!--
+        <input type="email" id="correo" name="email" ng-model="email" placeholder="Ingrese su email" value=""><br>
+        <input type="password" id="clave" minlength="7" ng-model="password" placeholder="clave" required="true" value=""><br>
+        <button class="button-green" id="login" ng-click="Login()" ng-disabled="myForm.$invalid"><span>Login </span></button>
+
+          -->
+ 
+
+                <input type="email" id="correo"  ng-model="email"  class="form-control" placeholder="Correo electronico" required="" autofocus="" >
+
+      
+        
+        <input type="password" id="clave" minlength="7" ng-model="password" class="form-control" placeholder="clave" required="true">
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="recordarme" unchecked> Recordame
+          </label>
+          
+        </div>
+        <button class="btn btn-lg btn-primary btn-block"  id="login" ng-click="Login()" ng-disabled="formLogin.$invalid"  >    Ingresar</button>
+      <p></p>
+      <p></p>
+      </form>
+
+
+
+
+    </div> <!-- /container -->
+<center><a id="barraLogin" href="index.html"   class="btn btn-danger" >Cancelar</a></center>
+</center>
+</div>
+</div>  

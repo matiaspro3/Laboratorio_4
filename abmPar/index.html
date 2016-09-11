@@ -11,72 +11,68 @@
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link href="css/media-queries.css" rel="stylesheet" type="text/css">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<link href="..//css/ingreso.css" rel="stylesheet">
+<link href="css/ingreso.css" rel="stylesheet">
+
+<!-- abm viejo -->
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
 <script type="text/javascript" src="js/funcionesLogin.js"></script>
 <script type="text/javascript" src="js/funcionesABM.js"></script>
 <script type="text/javascript" src="js/funcionesUser.js"></script>
 <script type="text/javascript" src="js/funcionDeslogueoAutomatico.js"></script>
 
+<!-- refer nuevos -->
+
+
+	<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+	<!-- Ruteo -->
+	<script SRC="bower_components/angular-ui-router/release/angular-ui-router.min.js" TYPE="text/javascript"></script>
+	
+
+	<script SRC="js/miAplicacion.js" TYPE="text/javascript"></script>
+	<!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- refer nuevos -->
+
+<!-- refer Login -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- refer Login fin -->
+<!-- refer alta -->
+<link href="css/alta.css" rel="stylesheet">
+<!-- refer alta fin -->
+
+
+
+		<!--adivina el numero -->
+		
+		<script type="text/javascript" src="juegos/jsAdivinaElNumero2.js"></script>
+        <!-- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
 
-<body>
+<div ui-view></div>
 
-<div id="pagewrap" >
-
-			<header id="header">
-
-				
-
-					<nav>
-							<ul id="main-nav" >
-							
-								<li><a onclick="MostrarInicio()" class="btn"                >Inicio</a> </li>
-								<li><a onclick="MostrarGrilla()" class="btn"                >Mostrar Productos	 </a> </li>
-								<li><a onclick="MostarLogin()"   class="btn"id="BotonLogin" >Login</a> </li>
-								<li><a onclick="EliminarCookie()"   class="btn"id="BotonLogin" >Cookie</a> </li>
-
-								<li><a href="Htmls\formLogin2.html"   class="btn"id="BotonLogin" >Login Angular</a> </li>
-								<li><a href="Htmls\formAlta.html"   class="btn"id="BotonLogin" >Alta Angular</a> </li>
-								
-								<div id="perfil">  </div>
-
-							</ul>
-							<!-- /#main-nav --> 
-				</nav>
+<body  ng-app="angularABM">
 
 
-			</header>
-	<!-- /#header -->
-		<center>
-			<div id="content" >
-
-					
-
-						</header>
-									<center>
-									<div id="principal">
-												
-											
-											<h2><font color="red"> Bienvenido!!! </font></h2>
-												<h3 style="color:blue;">Que desea consultar?</h3>	
-									</div>		
-									</center>
-					
-		<!-- /.post -->
-
-				</div>
-	<!-- /#content --> 
-	
-	</center>
-	<!-- /#sidebar -->
-
-	<!-- /#footer --> 
-	
-		</div>
-<!-- /#pagewrap -->
 </body>
 </html>
 

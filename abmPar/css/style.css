@@ -106,7 +106,7 @@ HEADER
 *************************************************************************************/
 #header {
 	position: relative;
-	height: 160px;
+	height: 100px;   /*margen superior de la barra de menues*/
 }
 
 /* site logo */

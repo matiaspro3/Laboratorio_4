@@ -64,6 +64,26 @@ appAngular.config(function($stateProvider, $urlRouterProvider) {
     	}
     	)
 
+
+     .state(
+      "barraMenuAbstr.perfil",{
+        url:"/perfil",
+        //templateUrl:"personagrilla.html"
+        views:{
+          "contenido":{
+            templateUrl:"Htmls/perfil.html",
+            controller:"controlperfil"
+          }
+        }
+      }
+      )
+
+
+
+
+
+
+//juegos
   .state(
         "menujuegos",{
             url:"/menujuegos",
@@ -217,6 +237,15 @@ $scope.irGrilla=function(){
 };
 
 
+$scope.irPerfil=function(){
+
+    $state.go("barraMenuAbstr.perfil");
+ 
+  
+};
+
+
+
 
 
 });
@@ -232,8 +261,11 @@ $scope.irGrilla=function(){
 appAngular.controller("controlInicio", function($scope){
 
 	});
+//
 
+appAngular.controller("controlperfil", function($scope){
 
+  });
 //
 appAngular.controller("controljuegos", function($scope, $state,$rootScope){
 

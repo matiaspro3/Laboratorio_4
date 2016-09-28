@@ -191,10 +191,14 @@ $scope.Login=function(){
   //  alert("Logueado!");
   console.info("email", $rootScope.usuarios.email);
   console.info("pass", $rootScope.usuarios.pass);
-   //console.info("pass", $scope.user.pass);
+  //console.info("pass", $scope.user.pass);
   //$rootScope.user.email;
   //$rootScope.user.pass;
-  }
+
+$state.go("barraMenuAbstr.inicio");     
+
+
+}
 
 
 
@@ -277,7 +281,7 @@ appAngular.controller("controlInicio", function($scope){
 
 	});
 //
-appAngular.controller("controlperfilAlta", function($scope,FileUploader){
+appAngular.controller("controlperfilAlta", function($scope,FileUploader,$rootScope,$state){
     
 
 
@@ -290,12 +294,18 @@ appAngular.controller("controlperfilAlta", function($scope,FileUploader){
   }
 
 
-  $scope.Guardar=function(){
+
+$scope.Login=function(){
+  //  alert("Logueado!");
+  console.info("email", $rootScope.usuarios.email);
+  console.info("pass", $rootScope.usuarios.pass);
+  //console.info("pass", $scope.user.pass);
+  //$rootScope.user.email;
+  //$rootScope.user.pass;
+
+$state.go("barraMenuAbstr.inicio");     
 
 
-    console.log("persona a guardar:");
-    console.log($scope.persona);
-    $state.go('persona.slider', "algo");
 }
 
 
@@ -396,6 +406,16 @@ $scope.Volver= function()
 $state.go("barraMenuAbstr.inicio");    
 
 }
+
+$scope.Alta=function(){
+
+$state.go("barraMenuAbstr.inicio");     
+
+
+}
+
+
+
 
 
 

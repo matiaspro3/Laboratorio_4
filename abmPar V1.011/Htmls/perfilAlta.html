@@ -32,12 +32,7 @@
         
         <input type="password" id="clave" minlength="7" ng-model="usuarios.pass" class="form-control" placeholder="clave" required="true">
 
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="recordarme" unchecked> Recordame
-          </label>
-          
-        </div>
+       
         <button class="btn btn-lg btn-primary btn-block"  id="login" ng-click="Login()" ng-disabled="formLogin.$invalid"  >    Ingresar</button>
          <a id="barraLogin" ng-click="Volver()"  class="btn btn-danger" >Cancelar </a>
       <p></p>

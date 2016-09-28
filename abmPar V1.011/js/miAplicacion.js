@@ -1,4 +1,4 @@
-var appAngular=angular.module('angularABM',['ui.router']);
+var appAngular=angular.module('angularABM',['ui.router','angularFileUpload']);
 
 appAngular.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -68,16 +68,29 @@ appAngular.config(function($stateProvider, $urlRouterProvider) {
      .state(
       "barraMenuAbstr.perfil",{
         url:"/perfil",
-        //templateUrl:"personagrilla.html"
         views:{
           "contenido":{
             templateUrl:"Htmls/perfil.html",
             controller:"controlperfil"
           }
         }
-      }
+          
+                }
       )
 
+     .state(
+      "barraMenuAbstr.perfilAlta",{
+        url:"/perfilAlta",
+        views:{
+          "contenido":{
+            templateUrl:"Htmls/perfilAlta.html",
+            controller:"controlperfilAlta"
+          }
+        }
+           
+
+      }
+      )
 
 
 
@@ -211,8 +224,6 @@ apellido:''
 
 }
 
-
-
 $scope.irLogin=function(){
 
     $state.go("barraMenuAbstr.login");
@@ -238,9 +249,13 @@ $scope.irGrilla=function(){
 
 
 $scope.irPerfil=function(){
-
-    $state.go("barraMenuAbstr.perfil");
- 
+    console.log($rootScope.usuarios.email);
+    if ($rootScope.usuarios.email ==""){
+      console.log("if");
+    $state.go("barraMenuAbstr.perfilAlta");}
+    else{ console.log("else");
+      $state.go("barraMenuAbstr.perfil");
+ }  
   
 };
 
@@ -262,9 +277,54 @@ appAngular.controller("controlInicio", function($scope){
 
 	});
 //
+appAngular.controller("controlperfilAlta", function($scope,FileUploader){
+    
 
-appAngular.controller("controlperfil", function($scope){
 
+  $scope.SubidorDeArchivos = new FileUploader({url:'servidor/archivos.php'});
+  $scope.SubidorDeArchivos.onSuccessItem=function(item,response,status,headers)
+  {
+    
+    
+    
+  }
+
+
+  $scope.Guardar=function(){
+
+
+    console.log("persona a guardar:");
+    console.log($scope.persona);
+    $state.go('persona.slider', "algo");
+}
+
+
+  //  
+  });
+
+appAngular.controller("controlperfil", function($scope,FileUploader){
+    
+
+
+  $scope.SubidorDeArchivos = new FileUploader({url:'servidor/archivos.php'});
+  $scope.SubidorDeArchivos.onSuccessItem=function(item,response,status,headers)
+  {
+    
+    
+    
+  }
+
+
+  $scope.Guardar=function(){
+
+
+    console.log("persona a guardar:");
+    console.log($scope.persona);
+    $state.go('persona.slider', "algo");
+}
+
+
+  //  
   });
 //
 appAngular.controller("controljuegos", function($scope, $state,$rootScope){

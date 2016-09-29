@@ -1,6 +1,6 @@
-var appAngular=angular.module('angularABM',['ui.router','angularFileUpload']);
+var appAngular=angular.module('angularABM',['ui.router','angularFileUpload','satellizer','validation.match']);
 
-appAngular.config(function($stateProvider, $urlRouterProvider) {
+appAngular.config(function($stateProvider, $urlRouterProvider,$authProvider) {
     $stateProvider
     // .State: Hace referencia a la barra de búsqueda URL. Según el valor que ingrese, hará el redireccionamiento al url definido en JSON
     
@@ -153,7 +153,40 @@ appAngular.config(function($stateProvider, $urlRouterProvider) {
 
 
 
+ $authProvider.github({
+      clientId: '9059f5f5b7c5e5b33d51'
 
+    });
+/*
+ $authProvider.loginUrl = 'Laboratorio_4/abmPar V1.011/php/auth.php'; //Ruta del archivo auth que esta en jwt y direcciona a PHP
+  $authProvider.tokenName = 'ElNombreDelToken'; //nombre largo
+  $authProvider.tokenPrefix = 'Aplicacion'; //sarasa
+  $authProvider.authHeader = 'data';
+*/
+$authProvider.httpInterceptor = function() { return true; },
+$authProvider.withCredentials = false;
+$authProvider.tokenRoot = null;
+$authProvider.baseUrl = '/';
+$authProvider.loginUrl = '/trtr/login';  //q es??
+$authProvider.signupUrl = '/icio/signup';//q es??
+$authProvider.unlinkUrl = '/auth/unlink/';//q es??
+$authProvider.tokenName = 'tokengithub';
+$authProvider.tokenPrefix = 'satellizer';
+$authProvider.tokenHeader = 'Authorization';
+$authProvider.tokenType = 'Bearer';
+$authProvider.storageType = 'localStorage';
+
+
+$authProvider.github({
+  url: 'Laboratorio_4/abmPar%20V1.011/#/barraMenuAbstr/inicio', // no cancela pero no hace
+  authorizationEndpoint: 'https://github.com/login/oauth/authorize',
+  redirectUri: window.location.origin,
+  optionalUrlParams: ['scope'],
+  scope: ['user:email'],
+  scopeDelimiter: ' ',
+  oauthType: '2.0',
+  popupOptions: { width: 1020, height: 618 }
+});
 
 
 
@@ -179,21 +212,66 @@ appAngular.config(function($stateProvider, $urlRouterProvider) {
 //controladores
 
 //
-appAngular.controller("controllogin", function($scope,$rootScope,$state){
-     // $scope.user;
-    //$scope.user.pass;
- // $rootScope.userActual.mail="";
-  //$rootScope.userActual.pass="";
+appAngular.controller("controllogin", function($scope,$rootScope,$state,$auth){
+// $scope.user;
+//$scope.user.pass;
+// $rootScope.userActual.mail="";
+//$rootScope.userActual.pass="";
+
+$scope.authenticate = function(provider) {
+      $auth.authenticate(provider)
+      .then(function(response) {
+        console.log(response);
+          console.info('que hay', $auth.getPayload());
+      
+        console.log("login con github!");
+        $state.go("barraMenuAbstr.inicio");     
+
+      })
+      .catch(function(response) {
+        console.log("rompio github!");
+      });
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 $scope.Login=function(){
-  //  alert("Logueado!");
+//alert("Logueado!");
   console.info("email", $rootScope.usuarios.email);
   console.info("pass", $rootScope.usuarios.pass);
-  //console.info("pass", $scope.user.pass);
-  //$rootScope.user.email;
-  //$rootScope.user.pass;
+//console.info("pass", $scope.user.pass);
+//$rootScope.user.email;
+//$rootScope.user.pass;
 
 $state.go("barraMenuAbstr.inicio");     
 

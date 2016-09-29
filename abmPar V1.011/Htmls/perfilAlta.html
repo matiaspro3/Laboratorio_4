@@ -12,8 +12,8 @@
          
     <div id="formLogin" class="container" >
            
-      <form  class="form-ingreso " >
-        <h2  style='color: blue' class="form-ingreso-heading">Ingrese sus datos</h2>
+      <form  class="form-ingreso " name ="regUSer">
+        <h2  style='color: red' class="form-ingreso-heading">Registro de usuario</h2>
 
         
        
@@ -27,13 +27,36 @@
           -->
  
 
-                <input type="email" id="email"   class="form-control" placeholder="Correo electronico" required autofocus="" ng-model = "usuarios.email" >
+                <input type="email" id="user"  name="user" class="form-control" placeholder="Correo electronico" required autofocus="" ng-model = "usuarios.email" required>
+
+
+  <br>
+        <input type="password" class="form-control" id="password"  name="pass" ng-model="usuarios.pass" placeholder="Ingrese su clave" value=""  required>
+      
+
+
+        <input type="password" class="form-control" id="password2" ng-model="usuarios.pass2" placeholder="Repita su clave" value=""  
+         required>
+
+        <br>
+
 
         
-        <input type="password" id="clave" minlength="7" ng-model="usuarios.pass" class="form-control" placeholder="clave" required="true">
+        <span style="color:red" ng-show=" usuarios.pass!=usuarios.pass2"> Las contraseNIas no coinciden.</span>
 
+             
        
-        <button class="btn btn-lg btn-primary btn-block"  id="login" ng-click="Login()" ng-disabled="formLogin.$invalid"  >    Ingresar</button>
+            
+        <br>
+
+        <button  class="btn btn-lg btn-success btn-block" name="login" id="login" ng-disabled="regUSer.$invalid || usuarios.pass!=usuarios.pass2" ng-click="Login()"><span>Registrarse </span></button><br/> 
+        </button>
+  
+
+
+
+
+
          <a id="barraLogin" ng-click="Volver()"  class="btn btn-danger" >Cancelar </a>
       <p></p>
       <p></p>
@@ -58,7 +81,8 @@
 
                 <div >
 
-                    <h3>Seleccionas Las Fotos que desees</h3>
+                    <h3>Seleccionas Las Fotos que desees</h3>   <br>
+
                     <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
                     
                     <input type="file" nv-file-select="" uploader="SubidorDeArchivos" multiple  /><br/>

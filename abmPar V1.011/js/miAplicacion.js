@@ -219,7 +219,8 @@ appAngular.controller("controlAbtrac", function($scope, $state,$rootScope){
 
 $rootScope.usuarios = {
 email:'',   
-pass:''
+pass:'',
+pass2:''
 
 }
 $rootScope.personas = {
@@ -281,8 +282,11 @@ appAngular.controller("controlInicio", function($scope){
 
 	});
 //
+
+
 appAngular.controller("controlperfilAlta", function($scope,FileUploader,$rootScope,$state){
     
+//$scope.usuarios.login = "Registrese";  
 
 
   $scope.SubidorDeArchivos = new FileUploader({url:'servidor/archivos.php'});
@@ -297,17 +301,35 @@ appAngular.controller("controlperfilAlta", function($scope,FileUploader,$rootSco
 
 $scope.Login=function(){
   //  alert("Logueado!");
-  console.info("email", $rootScope.usuarios.email);
-  console.info("pass", $rootScope.usuarios.pass);
-  //console.info("pass", $scope.user.pass);
-  //$rootScope.user.email;
-  //$rootScope.user.pass;
+  console.info("email:", $rootScope.usuarios.email);
+  console.info("pass:", $rootScope.usuarios.pass);
 
-$state.go("barraMenuAbstr.inicio");     
 
+$state.go("barraMenuAbstr.inicio");   
+
+//if($rootScope.usuarios.email ||$rootScope.usuarios.pass.lenght!  || $rootScope.usuarios.pass2)
+ /*  if (
+    $rootScope.usuarios.pass.lenght!=0)
+   {console.info("email leng:", $rootScope.usuarios.pass.lenght);}
+
+   //$state.go("barraMenuAbstr.inicio");    } 
+
+else {
+  console.info("email else:", $rootScope.usuarios.email);
+  console.info("pass else:", $rootScope.usuarios.pass);
+
+  console.info("pass2:", $rootScope.usuarios.pass2);
+
+  //$scope.usuarios.login = "Debe registrarse para continuar"; }
 
 }
+}
+*/}
+$scope.Volver= function()
+{
+$state.go("barraMenuAbstr.inicio");    
 
+}
 
   //  
   });
